@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+body { font-family: 'DM Sans', sans-serif; }
+.font-display { font-family: 'Cormorant Garamond', serif; }
+.nav-blur { background: linear-gradient(to bottom, #0d0d0dcc, transparent); backdrop-filter: blur(8px); }
+.calligraphy { font-family: 'Cormorant Garamond', serif; font-size: clamp(5rem, 14vw, 10rem); color: transparent; -webkit-text-stroke: 1px #c9a84c33; line-height: 1; pointer-events: none; user-select: none; }
+.grid-bg { background-image: linear-gradient(#c9a84c 1px, transparent 1px), linear-gradient(90deg, #c9a84c 1px, transparent 1px); background-size: 60px 60px; opacity: 0.03; }
+.hero-title { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1.08; font-weight: 600; color: #e8e0d0; letter-spacing: -0.02em; }
+.hero-sub { color: #7a7060; max-width: 52ch; font-weight: 300; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; line-height: 1.15; color: #e8e0d0; }
+.body-text { color: #9a9080; font-weight: 300; line-height: 1.9; }
+.quote-text { font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; color: #7a7060; line-height: 1.5; }
+.btn-primary { padding: 0.75rem 1.75rem; border: 0.5px solid #c9a84c; color: #c9a84c; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.btn-primary:hover { background: #c9a84c18; }
+.btn-secondary { padding: 0.75rem 1.75rem; border: 0.5px solid #3a3530; color: #7a7060; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+.btn-secondary:hover { color: #e8e0d0; border-color: #5a5040; }
+.nav-link { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #7a7060; transition: color 0.2s; text-decoration: none; }
+.nav-link:hover { color: #c9a84c; }
+.section-rule { border: none; border-top: 0.5px solid #c9a84c22; margin: 0; }
+.stats-grid { border: 0.5px solid #c9a84c22; }
+.stat-cell { background: #111; padding: 2.5rem 2rem; }
+.stat-number { font-size: 2.8rem; font-weight: 600; color: #c9a84c; line-height: 1; margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.78rem; letter-spacing: 0.08em; color: #5a5040; text-transform: uppercase; }
+.venture-card { border: 0.5px solid #c9a84c33; background: #141414; transition: border-color 0.3s, background 0.3s; text-decoration: none; display: block; }
+.venture-card:hover { border-color: #c9a84c88; background: #1a1710; }
+.venture-title { font-size: 1.6rem; font-weight: 600; color: #e8e0d0; }
+.venture-desc { color: #6a6050; font-weight: 300; line-height: 1.75; font-size: 0.95rem; }
+.tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; }
+.tag-live { background: #1a3a20; color: #4caf70; }
+.tag-info { background: #1a2a3a; color: #4a9fd4; }
+.tag-soon { background: #2a2015; color: #c9a84c; }
+.connect-link { border: 0.5px solid #2a2520; color: #9a9080; font-weight: 300; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.connect-link:hover { border-color: #c9a84c66; color: #e8e0d0; }
+.footer-border { border-top: 0.5px solid #1a1a1a; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 0.9s ease both; }
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.6s; }
