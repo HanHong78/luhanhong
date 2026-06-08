@@ -2,6 +2,7 @@
 
 body { font-family: 'DM Sans', sans-serif; }
 .font-display { font-family: 'Cormorant Garamond', serif; }
+.site-name { font-weight: 700; letter-spacing: 0.05em; -webkit-text-stroke: 0.5px #c9a84c; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
 .nav-blur { background: linear-gradient(to bottom, #f5e6d0ee, transparent); backdrop-filter: blur(8px); }
 
 .calligraphy { font-family: 'Cormorant Garamond', serif; font-size: clamp(5rem, 14vw, 10rem); color: transparent; -webkit-text-stroke: 1px #c9a84c33; line-height: 1; pointer-events: none; user-select: none; }
@@ -11,14 +12,14 @@ body { font-family: 'DM Sans', sans-serif; }
 .hero-sub { color: #6a4a3a; max-width: 52ch; font-weight: 300; }
 .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; line-height: 1.15; color: #1a0a0a; }
 .body-text { color: #4a3a2a; font-weight: 300; line-height: 1.9; }
-.quote-text { font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 400; font-style: italic; color: #8a6a5a; line-height: 1.5; }
+.quote-text { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 500; font-style: italic; color: #3a1a0a; line-height: 1.6; }
 
 .btn-primary { padding: 0.75rem 1.75rem; border: 0.5px solid #c9a84c; color: #8a6a10; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
 .btn-primary:hover { background: #c9a84c22; }
 .btn-secondary { padding: 0.75rem 1.75rem; border: 0.5px solid #c9a84c88; color: #6a4a2a; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: color 0.2s, border-color 0.2s; display: inline-block; }
 .btn-secondary:hover { color: #1a0a0a; border-color: #c9a84c; }
 
-.nav-link { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8a6a5a; transition: color 0.2s; text-decoration: none; }
+.nav-link { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8a6a5a; transition: color 0.2s; text-decoration: none; font-weight: 600; }
 .nav-link:hover { color: #c9a84c; }
 
 .section-rule { border: none; border-top: 0.5px solid #e0c8a0; margin: 0; }
@@ -34,11 +35,11 @@ body { font-family: 'DM Sans', sans-serif; }
 .venture-desc { color: #6a4a3a; font-weight: 300; line-height: 1.75; font-size: 0.95rem; }
 
 .tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; }
-.tag-live { background: #e8f5e8; color: #2a7a3a; }
-.tag-info { background: #e8f0f8; color: #2a5a8a; }
-.tag-soon { background: #fdf0d8; color: #8a6a10; }
+.tag-live { background: #1a3a5a; color: #60d5ff; font-weight: 600; }
+.tag-info { background: #1a3a5a; color: #60d5ff; font-weight: 600; }
+.tag-soon { background: #1a3a5a; color: #ffaa44; font-weight: 600; }
 
-.connect-link { border: 0.5px solid #e0c8a0; color: #4a3a2a; font-weight: 300; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.connect-link { border: 0.5px solid #e0c8a0; color: #4a3a2a; font-weight: 400; text-decoration: none; transition: border-color 0.2s, color 0.2s, background 0.2s; }
 .connect-link:hover { border-color: #c9a84c; color: #1a0a0a; }
 
 .footer-border { border-top: 0.5px solid #e0c8a0; }

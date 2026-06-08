@@ -2,6 +2,7 @@
 import "./luhanhong.css";
 import { siteContent as c } from "./content";
 import { useEffect } from "react";
+import { Mail, Newspaper, ExternalLink } from "lucide-react";
 
 export default function HomeClient() {
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function HomeClient() {
 
       {/* Nav */}
       <nav className="fixed top-7 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-blur">
-        <span className="font-display text-lg" style={{color:"#c9a84c"}}>{c.chineseName}</span>
+        <span className="font-display text-lg site-name" style={{color:"#c9a84c", fontSize:"1.5rem"}}>{c.chineseName}</span>
         <div className="flex gap-8">
           <a href="#about" className="nav-link">About</a>
           <a href="#stories" className="nav-link">Stories</a>
@@ -192,11 +193,11 @@ export default function HomeClient() {
 
       {/* Big Quote */}
       <section className="reveal px-8 md:px-20 py-28 max-w-4xl mx-auto text-center">
-        <p className="font-display quote-text">
-          "{c.bigQuote.line1}<br />
-          <span style={{color:"#f0e6d6"}}>{c.bigQuote.line2}</span><br />
-          {c.bigQuote.line3}"
-        </p>
+<p className="font-display quote-text">
+  "{c.bigQuote.line1}<br />
+  <span style={{color:"#2a8a5a"}}>{c.bigQuote.line2}</span><br />
+  {c.bigQuote.line3}"
+</p>
         <div className="mt-8 flex justify-center">
           <div style={{width:40, height:1, background:"#c9a84c"}} />
         </div>
@@ -217,12 +218,51 @@ export default function HomeClient() {
             <p className="body-text" style={{maxWidth:"44ch"}}>{c.connect.sub}</p>
           </div>
           <div className="flex flex-col gap-4">
-            {c.connect.links.map(({label, href}) => (
-              <a key={label} href={href} target={href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
-                <span>{label}</span>
-                {href!=="#" && <span style={{color:"#c9a84c"}}>↗</span>}
-              </a>
-            ))}
+{c.connect.links.map(({label, href}) => {
+  let IconComponent = Mail;
+  let iconColor = "#4a9a5a"; // green for email (default)
+  
+  if (label.includes("LinkedIn")) {
+    iconColor = "#0a66c2"; // LinkedIn blue
+    return (
+      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="1.5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          <span>{label}</span>
+        </div>
+        <span style={{color:"#0a66c2"}}>↗</span>
+      </a>
+    );
+  }
+  
+  if (label.includes("Newsletter")) {
+    iconColor = "#c93535"; // red for China Arbitrage
+    return (
+      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-4">
+          <Newspaper size={20} color={iconColor} strokeWidth={1.5} />
+          <span>{label}</span>
+        </div>
+        <span style={{color:"#c9a84c"}}>↗</span>
+      </a>
+    );
+  }
+  
+  // Email (default green)
+  return (
+    <a key={label} href={href} target={href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+      <div className="flex items-center gap-4">
+        <Mail size={20} color={iconColor} strokeWidth={1.5} />
+        <span>{label}</span>
+      </div>
+      {href!=="#" && <span style={{color:"#c9a84c"}}>↗</span>}
+    </a>
+  );
+})}
           </div>
         </div>
       </section>
