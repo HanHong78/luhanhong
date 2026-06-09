@@ -120,16 +120,18 @@ export const siteContent = {
     line3: "my entire career.",
   },
 
-  connect: {
-    heading1: "Let us talk if you are",
-    heading2: "building the bridge too",
-    sub: "Reach out if you are building at the China-West intersection, navigating cross-cultural complexity, or rethinking what a meaningful life looks like in the AI era.",
-    links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/han-hong-lu-989586b/" },
-      { label: "The China Arbitrage — Newsletter", href: "https://luhanhong.substack.com" },
-      { label: "Email", href: "mailto:info@luhanhong.com" },
-    ],
-  },
+connect: {
+  heading1: "Let us talk if you are",
+  heading2: "building the bridge too",
+  sub: "Reach out if you are building at the China-West intersection, navigating cross-cultural complexity, or rethinking what a meaningful life looks like in the AI era.",
+  links: [
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/han-hong-lu-989586b/" },
+    { label: "The China Arbitrage — Newsletter", href: "https://luhanhong.substack.com" },
+    { label: "WhatsApp", href: "https://wa.me/6581142872" },
+    { label: "WeChat", href: "#", wechatID: "+86 13312950893" },
+    { label: "Email", href: "mailto:lu_han_hong@hotmail.com" },
+  ],
+},
 
   footer: {
     copy: "Han-Hong Lu. Singapore · Hong Kong · Shenzhen",

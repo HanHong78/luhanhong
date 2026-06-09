@@ -31,7 +31,7 @@ export default function HomeClient() {
 
       {/* Nav */}
       <nav className="fixed top-7 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-blur">
-        <span className="font-display text-lg site-name" style={{color:"#c9a84c", fontSize:"1.5rem"}}>{c.chineseName}</span>
+        <img src="/images/lhh_logo.jpg" alt="Han-Hong Lu" style={{height: "45px", width: "auto"}} />
         <div className="flex gap-8">
           <a href="#about" className="nav-link">About</a>
           <a href="#stories" className="nav-link">Stories</a>
@@ -218,8 +218,7 @@ export default function HomeClient() {
             <p className="body-text" style={{maxWidth:"44ch"}}>{c.connect.sub}</p>
           </div>
           <div className="flex flex-col gap-4">
-{c.connect.links.map(({label, href}) => {
-  let IconComponent = Mail;
+{c.connect.links.map(({label, href, wechatID}) => {
   let iconColor = "#4a9a5a"; // green for email (default)
   
   if (label.includes("LinkedIn")) {
@@ -249,6 +248,40 @@ export default function HomeClient() {
         </div>
         <span style={{color:"#c9a84c"}}>↗</span>
       </a>
+    );
+  }
+  
+  if (label.includes("WhatsApp")) {
+    iconColor = "#25d366"; // WhatsApp green
+    return (
+      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 0 0-4.781 1.158l-.338-.169C6.472 6.859 5.187 6.54 3.938 6.54 2.226 6.54.575 8.172.575 10.248c0 1.247.333 2.462.935 3.516L.57 23.578l3.898-1.288c1.05.573 2.389.88 3.845.88 5.745 0 10.426-4.637 10.426-10.33S17.72 3.578 11.975 3.578" />
+          </svg>
+          <span>{label}</span>
+        </div>
+        <span style={{color:"#25d366"}}>↗</span>
+      </a>
+    );
+  }
+  
+  if (label.includes("WeChat")) {
+    iconColor = "#09b83e"; // WeChat green
+    return (
+      <div key={label} className="connect-link flex items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
+            <path d="M8.688 6.578c-3.289 0-5.968 2.286-5.968 5.109 0 1.544.766 2.975 2.022 3.9.127.096.207.277.18.459l-.348 1.918.914-1.508c.096-.19.285-.318.508-.318.143 0 .285.032.413.095 1.056.508 2.199.798 3.366.798 3.289 0 5.968-2.286 5.968-5.109 0-2.823-2.679-5.109-5.968-5.109z"/>
+            <path d="M21.969 17.325c.381-1.202.587-2.475.587-3.794 0-4.19-3.508-7.62-7.84-7.62-2.142 0-4.095.825-5.524 2.166 1.202-.127 2.357.254 3.366 1.013 1.398 1.086 2.3 2.746 2.3 4.63 0 .635-.063 1.27-.19 1.881 1.37 1.202 2.253 2.937 2.253 4.895 0 .285-.032.587-.095.873 1.85-.381 3.539-1.397 4.794-2.802.349-.413.666-.857.953-1.343z"/>
+          </svg>
+          <div className="flex flex-col">
+            <span>{label}</span>
+            <span style={{fontSize: "0.75rem", color: "#8a6a5a"}}>{wechatID}</span>
+          </div>
+        </div>
+        <span style={{color:"#09b83e"}}>📋</span>
+      </div>
     );
   }
   
