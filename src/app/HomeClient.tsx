@@ -146,6 +146,35 @@ export default function HomeClient() {
 
       <hr className="section-rule" />
 
+      {/* Building in Action */}
+      <section className="reveal px-8 md:px-20 py-28 max-w-6xl mx-auto">
+        <p className="nav-link mb-5">Building</p>
+        <h2 className="font-display section-title mb-8">
+          {c.buildingInAction.title}<br />
+          <span style={{color:"#c9a84c"}}>{c.buildingInAction.subtitle}</span>
+        </h2>
+        
+        <div className="grid md:grid-cols-1 gap-8 items-start">
+          <div>
+            <p className="body-text">{c.buildingInAction.description}</p>
+          </div>
+          
+          <div className="video-container" style={{background:"#1a0a0a", borderRadius:"8px", overflow:"hidden", border:"0.5px solid #e0c8a0"}}>
+            <video 
+              width="100%" 
+              height="auto" 
+              controls 
+              style={{display:"block"}}
+            >
+              <source src={c.buildingInAction.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <hr className="section-rule" />
+
       {/* Ventures */}
       <section id="ventures" className="reveal px-8 md:px-20 py-28 max-w-6xl mx-auto">
         <p className="nav-link mb-5">Ventures</p>
@@ -193,11 +222,11 @@ export default function HomeClient() {
 
       {/* Big Quote */}
       <section className="reveal px-8 md:px-20 py-28 max-w-4xl mx-auto text-center">
-<p className="font-display quote-text">
-  "{c.bigQuote.line1}<br />
-  <span style={{color:"#2a8a5a"}}>{c.bigQuote.line2}</span><br />
-  {c.bigQuote.line3}"
-</p>
+        <p className="font-display quote-text">
+          "{c.bigQuote.line1}<br />
+          <span style={{color:"#2a8a5a"}}>{c.bigQuote.line2}</span><br />
+          {c.bigQuote.line3}"
+        </p>
         <div className="mt-8 flex justify-center">
           <div style={{width:40, height:1, background:"#c9a84c"}} />
         </div>
@@ -218,84 +247,84 @@ export default function HomeClient() {
             <p className="body-text" style={{maxWidth:"44ch"}}>{c.connect.sub}</p>
           </div>
           <div className="flex flex-col gap-4">
-{c.connect.links.map(({label, href, wechatID}) => {
-  let iconColor = "#4a9a5a"; // green for email (default)
-  
-  if (label.includes("LinkedIn")) {
-    iconColor = "#0a66c2"; // LinkedIn blue
-    return (
-      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="1.5">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-          <span>{label}</span>
-        </div>
-        <span style={{color:"#0a66c2"}}>↗</span>
-      </a>
-    );
-  }
-  
-  if (label.includes("Newsletter")) {
-    iconColor = "#c93535"; // red for China Arbitrage
-    return (
-      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-4">
-          <Newspaper size={20} color={iconColor} strokeWidth={1.5} />
-          <span>{label}</span>
-        </div>
-        <span style={{color:"#c9a84c"}}>↗</span>
-      </a>
-    );
-  }
-  
-  if (label.includes("WhatsApp")) {
-    iconColor = "#25d366"; // WhatsApp green
-    return (
-      <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 0 0-4.781 1.158l-.338-.169C6.472 6.859 5.187 6.54 3.938 6.54 2.226 6.54.575 8.172.575 10.248c0 1.247.333 2.462.935 3.516L.57 23.578l3.898-1.288c1.05.573 2.389.88 3.845.88 5.745 0 10.426-4.637 10.426-10.33S17.72 3.578 11.975 3.578" />
-          </svg>
-          <span>{label}</span>
-        </div>
-        <span style={{color:"#25d366"}}>↗</span>
-      </a>
-    );
-  }
-  
-  if (label.includes("WeChat")) {
-    iconColor = "#09b83e"; // WeChat green
-    return (
-      <div key={label} className="connect-link flex items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
-            <path d="M8.688 6.578c-3.289 0-5.968 2.286-5.968 5.109 0 1.544.766 2.975 2.022 3.9.127.096.207.277.18.459l-.348 1.918.914-1.508c.096-.19.285-.318.508-.318.143 0 .285.032.413.095 1.056.508 2.199.798 3.366.798 3.289 0 5.968-2.286 5.968-5.109 0-2.823-2.679-5.109-5.968-5.109z"/>
-            <path d="M21.969 17.325c.381-1.202.587-2.475.587-3.794 0-4.19-3.508-7.62-7.84-7.62-2.142 0-4.095.825-5.524 2.166 1.202-.127 2.357.254 3.366 1.013 1.398 1.086 2.3 2.746 2.3 4.63 0 .635-.063 1.27-.19 1.881 1.37 1.202 2.253 2.937 2.253 4.895 0 .285-.032.587-.095.873 1.85-.381 3.539-1.397 4.794-2.802.349-.413.666-.857.953-1.343z"/>
-          </svg>
-          <div className="flex flex-col">
-            <span>{label}</span>
-            <span style={{fontSize: "0.75rem", color: "#8a6a5a"}}>{wechatID}</span>
-          </div>
-        </div>
-        <span style={{color:"#09b83e"}}>↗</span>
-      </div>
-    );
-  }
-  
-  // Email (default green)
-  return (
-    <a key={label} href={href} target={href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
-      <div className="flex items-center gap-4">
-        <Mail size={20} color={iconColor} strokeWidth={1.5} />
-        <span>{label}</span>
-      </div>
-      {href!=="#" && <span style={{color:"#c9a84c"}}>↗</span>}
-    </a>
-  );
-})}
+            {c.connect.links.map(({label, href, wechatID}) => {
+              let iconColor = "#4a9a5a"; // green for email (default)
+              
+              if (label.includes("LinkedIn")) {
+                iconColor = "#0a66c2"; // LinkedIn blue
+                return (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+                    <div className="flex items-center gap-4">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="1.5">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                      </svg>
+                      <span>{label}</span>
+                    </div>
+                    <span style={{color:"#0a66c2"}}>↗</span>
+                  </a>
+                );
+              }
+              
+              if (label.includes("Newsletter")) {
+                iconColor = "#c93535"; // red for China Arbitrage
+                return (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+                    <div className="flex items-center gap-4">
+                      <Newspaper size={20} color={iconColor} strokeWidth={1.5} />
+                      <span>{label}</span>
+                    </div>
+                    <span style={{color:"#c9a84c"}}>↗</span>
+                  </a>
+                );
+              }
+              
+              if (label.includes("WhatsApp")) {
+                iconColor = "#25d366"; // WhatsApp green
+                return (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+                    <div className="flex items-center gap-4">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 0 0-4.781 1.158l-.338-.169C6.472 6.859 5.187 6.54 3.938 6.54 2.226 6.54.575 8.172.575 10.248c0 1.247.333 2.462.935 3.516L.57 23.578l3.898-1.288c1.05.573 2.389.88 3.845.88 5.745 0 10.426-4.637 10.426-10.33S17.72 3.578 11.975 3.578" />
+                      </svg>
+                      <span>{label}</span>
+                    </div>
+                    <span style={{color:"#25d366"}}>↗</span>
+                  </a>
+                );
+              }
+              
+              if (label.includes("WeChat")) {
+                iconColor = "#09b83e"; // WeChat green
+                return (
+                  <div key={label} className="connect-link flex items-center justify-between px-6 py-5">
+                    <div className="flex items-center gap-4">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill={iconColor}>
+                        <path d="M8.688 6.578c-3.289 0-5.968 2.286-5.968 5.109 0 1.544.766 2.975 2.022 3.9.127.096.207.277.18.459l-.348 1.918.914-1.508c.096-.19.285-.318.508-.318.143 0 .285.032.413.095 1.056.508 2.199.798 3.366.798 3.289 0 5.968-2.286 5.968-5.109 0-2.823-2.679-5.109-5.968-5.109z"/>
+                        <path d="M21.969 17.325c.381-1.202.587-2.475.587-3.794 0-4.19-3.508-7.62-7.84-7.62-2.142 0-4.095.825-5.524 2.166 1.202-.127 2.357.254 3.366 1.013 1.398 1.086 2.3 2.746 2.3 4.63 0 .635-.063 1.27-.19 1.881 1.37 1.202 2.253 2.937 2.253 4.895 0 .285-.032.587-.095.873 1.85-.381 3.539-1.397 4.794-2.802.349-.413.666-.857.953-1.343z"/>
+                      </svg>
+                      <div className="flex flex-col">
+                        <span>{label}</span>
+                        <span style={{fontSize: "0.75rem", color: "#8a6a5a"}}>{wechatID}</span>
+                      </div>
+                    </div>
+                    <span style={{color:"#09b83e"}}>↗</span>
+                  </div>
+                );
+              }
+              
+              // Email (default green)
+              return (
+                <a key={label} href={href} target={href.startsWith("http")?"_blank":undefined} rel="noopener noreferrer" className="connect-link flex items-center justify-between px-6 py-5">
+                  <div className="flex items-center gap-4">
+                    <Mail size={20} color={iconColor} strokeWidth={1.5} />
+                    <span>{label}</span>
+                  </div>
+                  {href!=="#" && <span style={{color:"#c9a84c"}}>↗</span>}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
