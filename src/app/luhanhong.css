@@ -45,10 +45,10 @@ body { font-family: 'DM Sans', sans-serif; }
 .footer-border { border-top: 0.5px solid #e0c8a0; }
 
 /* Ticker */
-.ticker-wrap { position: fixed; top: 0; left: 0; right: 0; z-index: 40; overflow: hidden; background: #f5e6d0; border-bottom: 0.5px solid #e0c8a0; padding: 6px 0; }
+.ticker-wrap { position: fixed; top: 0; left: 0; right: 0; z-index: 40; overflow: hidden; background: #d32f2f; border-bottom: 0.5px solid #b71c1c; padding: 6px 0; }
 .ticker-track { display: flex; width: max-content; animation: ticker 40s linear infinite; }
-.ticker-item { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #b09070; padding: 0 1.5rem; white-space: nowrap; }
-.ticker-dot { color: #c9a84c88; }
+.ticker-item { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #ffffff; padding: 0 1.5rem; white-space: nowrap; font-weight: 500; }
+.ticker-dot { color: #ffffff66; }
 .ticker-wrap:hover .ticker-track { animation-play-state: paused; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }
 

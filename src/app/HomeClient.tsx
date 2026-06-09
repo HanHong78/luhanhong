@@ -280,7 +280,7 @@ export default function HomeClient() {
             <span style={{fontSize: "0.75rem", color: "#8a6a5a"}}>{wechatID}</span>
           </div>
         </div>
-        <span style={{color:"#09b83e"}}>📋</span>
+        <span style={{color:"#09b83e"}}>↗</span>
       </div>
     );
   }
