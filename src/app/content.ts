@@ -68,7 +68,12 @@ export const siteContent = {
       insight: "Say yes first. Learn while doing. Elation is the reward.",
     },
   ],
-
+buildingInAction: {
+  title: "Compp Agent in Action",
+  subtitle: "What I'm building now",
+  description: "A 2-minute demo of the Compp Agent — an AI-powered system that learns from interaction. Built in 2025, this represents the convergence of my 25 years in tech and AI expertise.",
+  videoSrc: "/videos/ComppAgent2025-09-01.mp4",
+},
   timeline: [
     { year: "1986", event: "Scored 119/120 in national college entrance math exam — highest among 1 million students. Not the top student anyone expected." },
     { year: "2000", event: "Java developer, 724 Solutions, Friedrichsdorf Germany. First bridge between East and West." },
