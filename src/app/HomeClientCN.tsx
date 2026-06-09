@@ -32,12 +32,15 @@ export default function HomeClientCN() {
       {/* Nav */}
       <nav className="fixed top-7 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-blur">
         <img src="/images/lhh_logo.jpg" alt="Lu Han Hong" style={{height: "45px", width: "auto"}} />
-        <div className="flex gap-8">
+        <div className="flex gap-8 items-center">
           <a href="#about" className="nav-link">关于</a>
           <a href="#stories" className="nav-link">故事</a>
           <a href="#ventures" className="nav-link">项目</a>
           <a href="#timeline" className="nav-link">历程</a>
           <a href="#connect" className="nav-link">联系</a>
+<a href="/" className="nav-link flex items-center gap-1" title="English Version">
+            🌐 English
+          </a>
         </div>
       </nav>
 
