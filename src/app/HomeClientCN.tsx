@@ -29,20 +29,41 @@ export default function HomeClientCN() {
         </div>
       </div>
 
-      {/* Nav */}
-      <nav className="fixed top-7 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-blur">
-        <img src="/images/lhh_logo.jpg" alt="Lu Han Hong" style={{height: "45px", width: "auto"}} />
-        <div className="flex gap-8 items-center">
-          <a href="#about" className="nav-link">关于</a>
-          <a href="#stories" className="nav-link">故事</a>
-          <a href="#ventures" className="nav-link">项目</a>
-          <a href="#timeline" className="nav-link">历程</a>
-          <a href="#connect" className="nav-link">联系</a>
-<a href="/" className="nav-link flex items-center gap-1" title="English Version">
-            🌐 English
-          </a>
-        </div>
-      </nav>
+{/* Nav */}
+<nav className="fixed top-7 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-blur">
+  <img src="/images/lhh_logo.jpg" alt="Han-Hong Lu" style={{height: "45px", width: "auto"}} />
+  
+  {/* Desktop Nav */}
+  <div className="hidden md:flex gap-8 items-center">
+    <a href="#about" className="nav-link">About</a>
+    <a href="#stories" className="nav-link">Stories</a>
+    <a href="#ventures" className="nav-link">Ventures</a>
+    <a href="#timeline" className="nav-link">Journey</a>
+    <a href="#connect" className="nav-link">Connect</a>
+    <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本">
+      🌐 中文
+    </a>
+  </div>
+  
+  {/* Mobile Menu Button */}
+  <button className="md:hidden flex flex-col gap-1 p-2" id="mobile-menu-btn" style={{background: "none", border: "none", cursor: "pointer"}}>
+    <div style={{width: "24px", height: "2px", background: "#8a6a5a"}}></div>
+    <div style={{width: "24px", height: "2px", background: "#8a6a5a"}}></div>
+    <div style={{width: "24px", height: "2px", background: "#8a6a5a"}}></div>
+  </button>
+</nav>
+
+{/* Mobile Menu */}
+<div id="mobile-menu" className="fixed left-0 right-0 top-20 bg-gradient-to-b from-[#f5e6d0] to-[#f0dfc0] z-40 hidden md:hidden flex flex-col gap-4 px-8 py-6 border-b border-[#e0c8a0]">
+  <a href="#about" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>About</a>
+  <a href="#stories" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Stories</a>
+  <a href="#ventures" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Ventures</a>
+  <a href="#timeline" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Journey</a>
+  <a href="#connect" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Connect</a>
+  <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>
+    🌐 中文
+  </a>
+</div>
 
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-20 pt-48 pb-24 overflow-hidden">
@@ -342,7 +363,13 @@ export default function HomeClientCN() {
         <span className="font-display" style={{color:"#3a1515", fontSize:"1.1rem"}}>{c.chineseName} · {c.domain}</span>
         <span style={{color:"#3a1515", fontSize:"0.75rem", letterSpacing:"0.08em"}}>© {new Date().getFullYear()} {c.footer.copy}</span>
       </footer>
-
+{/* Mobile Menu Toggle */}
+<script dangerouslySetInnerHTML={{__html: `
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu?.classList.toggle('hidden');
+  });
+`}} />
     </main>
   );
 }
