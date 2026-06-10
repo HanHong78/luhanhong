@@ -55,12 +55,12 @@ export default function HomeClientCN() {
 
 {/* Mobile Menu */}
 <div id="mobile-menu" className="fixed left-0 right-0 top-20 bg-gradient-to-b from-[#f5e6d0] to-[#f0dfc0] z-40 hidden md:hidden flex flex-col gap-4 px-8 py-6 border-b border-[#e0c8a0]">
-  <a href="#about" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>About</a>
-  <a href="#stories" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Stories</a>
-  <a href="#ventures" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Ventures</a>
-  <a href="#timeline" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Journey</a>
-  <a href="#connect" className="nav-link" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>Connect</a>
-  <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本" onClick={() => document.getElementById('mobile-menu').classList.add('hidden')}>
+  <a href="#about" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>About</a>
+  <a href="#stories" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Stories</a>
+  <a href="#ventures" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Ventures</a>
+  <a href="#timeline" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Journey</a>
+  <a href="#connect" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Connect</a>
+  <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>
     🌐 中文
   </a>
 </div>
