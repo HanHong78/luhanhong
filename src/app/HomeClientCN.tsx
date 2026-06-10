@@ -40,8 +40,8 @@ export default function HomeClientCN() {
     <a href="#ventures" className="nav-link">Ventures</a>
     <a href="#timeline" className="nav-link">Journey</a>
     <a href="#connect" className="nav-link">Connect</a>
-    <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本">
-      🌐 中文
+    <a href="/" className="nav-link flex items-center gap-1" title="English Version">
+     🌐 English
     </a>
   </div>
   
@@ -60,9 +60,9 @@ export default function HomeClientCN() {
   <a href="#ventures" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Ventures</a>
   <a href="#timeline" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Journey</a>
   <a href="#connect" className="nav-link" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>Connect</a>
-  <a href="/cn" className="nav-link flex items-center gap-1" title="中文版本" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>
-    🌐 中文
-  </a>
+<a href="/" className="nav-link flex items-center gap-1" title="English Version" onClick={() => document.getElementById('mobile-menu')?.classList.add('hidden')}>
+  🌐 English
+</a>
 </div>
 
       {/* Hero */}
